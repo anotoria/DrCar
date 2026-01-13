@@ -1,0 +1,94 @@
+
+export enum AuthMode {
+  LOGIN = 'LOGIN',
+  REGISTER = 'REGISTER'
+}
+
+export enum ViewMode {
+  USER = 'USER',
+  BUSINESS = 'BUSINESS'
+}
+
+export enum AppStage {
+  AUTH = 'AUTH',
+  DASHBOARD = 'DASHBOARD',
+  GARAGE = 'GARAGE',
+  SEARCH = 'SEARCH',
+  USER_PROFILE = 'USER_PROFILE',
+  BUSINESS_PROFILE = 'BUSINESS_PROFILE',
+  SCHEDULING = 'SCHEDULING',
+  BOOKING_CONFIRMATION = 'BOOKING_CONFIRMATION',
+  APPOINTMENTS = 'APPOINTMENTS',
+  RATE_SERVICE = 'RATE_SERVICE',
+  BUSINESS_REVIEWS = 'BUSINESS_REVIEWS',
+  BUSINESS_DASHBOARD = 'BUSINESS_DASHBOARD',
+  BUSINESS_APPOINTMENTS = 'BUSINESS_APPOINTMENTS',
+  BUSINESS_SERVICES = 'BUSINESS_SERVICES',
+  BUSINESS_EDIT_PROFILE = 'BUSINESS_EDIT_PROFILE',
+  BUSINESS_PROMOTIONS = 'BUSINESS_PROMOTIONS',
+  USER_PROMOTIONS = 'USER_PROMOTIONS',
+  USER_NOTIFICATIONS = 'USER_NOTIFICATIONS',
+  BUSINESS_NOTIFICATIONS = 'BUSINESS_NOTIFICATIONS',
+  INFO_HOW_IT_WORKS = 'INFO_HOW_IT_WORKS',
+  INFO_WORKSHOPS = 'INFO_WORKSHOPS',
+  INFO_SERVICES = 'INFO_SERVICES',
+  INFO_PLANS = 'INFO_PLANS',
+  INFO_HELP = 'INFO_HELP',
+  CHAT = 'CHAT',
+  FAQ_SUPPORT = 'FAQ_SUPPORT',
+  ADMIN_AUTH = 'ADMIN_AUTH',
+  ADMIN_DASHBOARD = 'ADMIN_DASHBOARD',
+  ADMIN_OWNERS = 'ADMIN_OWNERS',
+  ADMIN_BUSINESSES = 'ADMIN_BUSINESSES',
+  ADMIN_PROMOTIONS = 'ADMIN_PROMOTIONS',
+  ADMIN_NOTIFICATIONS = 'ADMIN_NOTIFICATIONS',
+  ADMIN_SPECIFIC_NOTIFICATION = 'ADMIN_SPECIFIC_NOTIFICATION',
+  ADMIN_SETTINGS_ADMINS = 'ADMIN_SETTINGS_ADMINS',
+  ADMIN_REPORTS = 'ADMIN_REPORTS',
+  ADMIN_FINANCIAL = 'ADMIN_FINANCIAL',
+  ADMIN_PLANS = 'ADMIN_PLANS',
+  ADMIN_PAYMENT_SETTINGS = 'ADMIN_PAYMENT_SETTINGS',
+  ADMIN_ACTIVITY_HISTORY = 'ADMIN_ACTIVITY_HISTORY',
+  ADMIN_REGISTER_PARTNER = 'ADMIN_REGISTER_PARTNER',
+  ADMIN_PARTNER_SUCCESS = 'ADMIN_PARTNER_SUCCESS',
+  ADMIN_APPROVE_PARTNER = 'ADMIN_APPROVE_PARTNER',
+  ADMIN_PARTNER_STATUS = 'ADMIN_PARTNER_STATUS',
+  ADMIN_GENERAL_SETTINGS = 'ADMIN_GENERAL_SETTINGS',
+  OWNER_ONBOARDING = 'OWNER_ONBOARDING'
+}
+
+export interface UserInput {
+  name?: string;
+  email: string;
+  password: string;
+  confirmPassword?: string;
+  termsAccepted?: boolean;
+}
+
+export interface Vehicle {
+  id: string;
+  model: string;
+  brand: string;
+  year: string;
+  plate: string;
+  status: 'active' | 'review' | 'ok';
+  mileage: number;
+}
+
+export interface Appointment {
+  id: string;
+  workshopName: string;
+  serviceName: string;
+  date: string;
+  status: 'pending' | 'confirmed' | 'completed' | 'cancelled';
+  price: number;
+  vehicleId: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  type: 'owner' | 'business' | 'admin';
+  avatar?: string;
+}
